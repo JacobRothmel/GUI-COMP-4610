@@ -1,0 +1,118 @@
+<!DOCTYPE HTML >
+<!--
+File: /usr/cs/undergrad/2016/jrothmel/public_html/index.html
+Student in: 91.61 GUI Programming I
+Jacob Rothmel jacob_rothmel@student.uml.edu
+edited on: 10/04/16
+Used W3Schools and lots and lots of google.
+-->
+<html lang="en">
+    <head>
+        <title>Jacob Rothmel Home</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+        <link rel="stylesheet" href="CSS/indexstyle.css" />
+    </head>
+    <body class="My Index">
+        <!-- header -->
+        <div id="header">
+            <div class="container">
+                <!-- Logo -->
+                <div id="logo">
+                    <h1>Jacob Rothmel</h1>
+                    <span>Code and styling by Jacob Rothmel</span>                    
+                </div>
+                <!-- Project Navigation -->
+                <div id="nav">
+                    <div class="AssignmentMenu">
+                        <button onclick="myFunction()" class="dropbtn">Assignment Menu</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="index.html" target="_blank">Home</a>
+                            <a href="icex2/ICEX2.html" target="_blank">IN CLASS EX2</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Content -->
+        <div id="content">
+            <div class="container">
+                <div class="row">
+                    <!-- aboutme -->
+                    <div id="aboutme" >
+                        <section>
+                            <header>
+                                <h2>About Me</h2>
+                                <span class="byline">A brief look at Jacob Rothmel</span>
+                            </header>
+                            <p>I like </p>
+                            <ul id="abtmelikes">
+                                <li><del>math</del></li>
+                                <li>coding</li>
+                                <li>reading</li>
+                                <li>writing</li>
+                                <li>playing videogames</li>
+                                <li>experimenting with photo/video editing</li>
+                            </ul>
+                            <p>I am terrible at art stuff and making things look pretty but I am good at coding and problem solving.</p>
+                            <p id="stackoverblurb">
+                                When I get bored I sometimes answer questions and do documentation work on 
+                                <a href="http://stackoverflow.com/" target="_blank">StackOverflow</a>
+                            </p>
+                            <!-- user profile flair -->
+                            <div id="stackprofile">
+                                <a href="http://stackoverflow.com/users/3874053/jacobr365">
+                                <img src="http://stackoverflow.com/users/flair/3874053.png" width="208" height="58" alt="profile for Jacobr365 at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Jacobr365 at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+                                </a>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="futureholder">
+                        <h2>For Future Use</h2>
+                        <p>placeholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholder</p>
+                        <p><a href="#" class="button">???</a></p>
+                    </div>
+                    <div class="futureholder">
+                        <h2>For Future Use</h2>
+                        <p>placeholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholder</p>
+                        <p><a href="#" class="button">???</a></p>
+                    </div>
+                    <div class="futureholder">
+                        <h2>For Future Use</h2>
+                        <p>placeholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholder</p>
+                        <p><a href="#" class="button">???</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            /* When the user clicks on the button, 
+            toggle between hiding and showing the dropdown content */
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+            
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(event) {
+              if (!event.target.matches('.dropbtn')) {
+            
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                  }
+                }
+              }
+            }
+        </script>
+    </body>
+</html>
