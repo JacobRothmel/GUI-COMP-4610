@@ -1,0 +1,60 @@
+body {
+    font-size: 80%;
+    font-family: "Courier New", Courier, monospace;
+    letter-spacing: 0.15em;
+    background-color: white;
+    text-align: center;
+    outline: 2px solid #CCC;
+    margin:0 auto;
+}
+#page {
+    border-style: double;
+    padding: 20px;
+    max-width: 940px;
+    min-width: 720px;
+    margin: 0 auto
+}
+/* Style list */
+ul {
+    list-style-type: none;
+    margin: 0 auto;
+    width: 570px;
+    border-top: 3px solid black;
+    border-bottom: 2px solid black;
+    padding: 6px 18px 5px 18px;     
+}
+ li {
+    display: inline;
+    padding: 15px;
+    color: black;
+}
+p {
+    margin: 0 auto;
+    width: 610px;
+    padding: 10px;
+}
+/* stretch image to same width as text */
+p img:first-child {
+    width: 610px;
+}
+#logo {
+    text-align: center;
+    margin: auto;
+    width: 600px;
+    padding: 15px;
+}
+/*link behaviour*/
+#navigation a {
+    text-decoration: none;
+    color: black;
+}
+/*link behaviour*/
+#navigation  a:visited{
+    color: red;
+}
+/*link behaviour*/
+#navigation a:hover {
+    color: red;
+}
+
+
