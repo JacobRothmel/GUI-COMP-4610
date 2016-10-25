@@ -1,3 +1,1 @@
-# mySite
-site for gui class
-hw 4.
+Gui class work starting from hw5
