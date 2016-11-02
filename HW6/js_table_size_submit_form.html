@@ -1,0 +1,77 @@
+<!DOCTYPE html >
+<!--
+    File: /usr/cs/undergrad/2016/jrothmel/public_html/hw6/js_table_size_submit_form.html
+    Student in: 91.61 GUI Programming I
+    Jacob Rothmel jacob_rothmel@student.uml.edu
+    edited on: 11/01/16
+    Used W3Schools and lots and lots of google.
+    -->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>User Sized Table</title>
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="CSS/js_table_sizing_form_style.css"/>
+        <!-- scripts -->
+        <script type="text/javascript" src="js/user_table.js"></script> 
+    </head>
+    <body>
+        <!-- Header for the page -->
+        <div id="header">
+            <div class="jumbotron">
+                <div class="title">
+                    <h1>User Sized Table</h1>
+                </div>
+            </div>
+        </div>
+        <!-- Form to accept info from user -->   
+        <div id="tinfo-form">
+            <div class="container">
+                <!-- This form uses the type="number" attribute to enusre input is a number.
+                    javascript is used to ensure the fields are not empty and start < end. 
+                    this way no more validation is needed. -->
+                <form id="tableform" method="post" onsubmit="return false">
+                    <!-- div so values form elements can be centered -->
+                    <div id="tinfo-values">
+                        x-axis start:
+                        <input type="number" name="xstart" id="xstart" min="1" value="1" required>
+                        x-axis end:
+                        <input type="number" name="xend" id="xend" min="1" value="5" required>
+                        <br>
+                        y-axis start:
+                        <input type="number" name="ystart" id="ystart" min="1" value="1" required>
+                        y-axis end:
+                        <input type="number" name="yend" id="yend" min="1" value="5" required>
+                        <br>
+                        <input type="button" value="Make Table" onclick="return getFormValues()">
+                        <input type="button" value="Reset" onclick="return refreshPage()">
+                    </div>
+                </form>
+                <!-- displayes error messages or what the user entered -->
+                <div id="tablemessage">
+                </div>
+            </div>
+        </div>
+        <!-- Area for table -->
+        <div id="tableArea">
+            <table id="thetable">           
+            </table>
+        </div>
+        <div class="footer">
+            <p id="val1">
+                <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img style="border:0;width:88px;height:31px"
+                    src="http://jigsaw.w3.org/css-validator/images/vcss"
+                    alt="Valid CSS!" />
+                </a>
+            </p>
+            <p id="val2">
+                <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img style="border:0;width:88px;height:31px"
+                    src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+                    alt="Valid CSS!" />
+                </a>
+            </p>
+        </div>
+    </body>
+</html>
