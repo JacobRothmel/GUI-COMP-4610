@@ -1,0 +1,80 @@
+/**
+* Jacob Rothmel
+* CSS style sheet for the js_table_size_submit form and the table it generates
+**/
+
+/********** clean spacing **********/
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/** Ensure the page can't cause the input boxes to overloap. **/
+body {
+    min-width: 800px;
+    width: auto !important;
+    width: 500px;
+}
+
+/********** Page Header Style **********/
+#header {
+    width: 100%;
+    display: block;
+    margin-bottom: 1%;
+}
+.jumbotron {
+    width: 100%;
+    min-width: 445px;
+}
+.title {
+    text-align: center;
+    margin: 0 auto;
+}
+
+/********** Form Area Style **********/
+.container {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 1%;
+}
+#tableform {
+    margin-bottom: 1%;
+}
+#tinfo-values {
+    text-align: center;
+    margin: 0 auto;
+}
+
+/********** Table Styles **********/
+#tablearea {
+    width: 100%;
+}
+table {
+    text-align: center;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+/** Make the table pretty **/
+tr:nth-child(odd),
+td:nth-child(odd) {
+    background-color: palegreen;
+}
+th:first-child {
+    background-color: white;
+}
+
+/********** Footer **********
+/** Display validators on same line **/
+p {
+    display: inline;
+}
