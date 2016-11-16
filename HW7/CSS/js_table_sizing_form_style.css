@@ -73,8 +73,14 @@ th:first-child {
     background-color: white;
 }
 
-/********** Footer **********
+/********** Footer **********/
 /** Display validators on same line **/
 p {
     display: inline;
+}
+
+/********** Error message **********/
+label.error{
+    color: red !important;
+    font-weight: bold !important;
 }
