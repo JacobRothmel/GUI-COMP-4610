@@ -5,3 +5,4 @@ hw6
 hw7
 inclass2
 inclass5
+inclass6
