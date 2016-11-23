@@ -1,0 +1,203 @@
+<!DOCTYPE html >
+<!--
+    File: /usr/cs/undergrad/2016/jrothmel/public_html/hw6/js_table_size_submit_form_jquery_pt2.html
+    Student in: 91.61 GUI Programming I
+    Jacob Rothmel jacob_rothmel@student.uml.edu
+    edited on: 11/23/16
+    Used W3Schools and lots and lots of google.
+    -->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>User Sized Multiplication Table</title>
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="CSS/js_table_sizing_form_style_pt2.css"/>
+        <!-- scripts -->
+        <!--include jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <!--include jQuery Validation Plugin-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"
+            type="text/javascript"></script>
+        <!--Optional: include only if you are using the extra rules in additional-methods.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/additional-methods.min.js"
+            type="text/javascript"></script>
+        <script type="text/javascript" src="js/user_table.js"></script>
+        <script src="js/table-validation.js"></script>
+        <!-- include jquery validation -->
+        <script  src="https://code.jquery.com/ui/jquery-ui-git.js"></script>
+        <script  src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" ></script>
+        <script  src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" ></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" />
+    </head>
+    <body>
+        <!-- Header for the page -->
+        <div id="header">
+            <div class="jumbotron">
+                <div class="title">
+                    <h1>User Sized Multiplication Table</h1>
+                    <h4>Enter values such that 1 <= values <= 45. <br>Start values must be smaller than end values (not equal).</h4>
+                </div>
+            </div>
+        </div>
+        <!-- Form to accept info from user -->   
+        <div id="tinfo-form">
+            <div class="container">
+                <!-- This form uses the type="number" attribute to enusre input is a number.
+                    javascript is used to ensure the fields are not empty and start < end. 
+                    this way no more validation is needed. -->
+                <form id="tableform" name="tableform" method="POST" action="#">
+                    <!-- div so values form elements can be centered -->
+                    <div id="coords">
+                        <label for="xstart">X-Start</label>
+                        <div id="entries" >
+                            <div id="slider1" class="slides"></div>
+                            <input id="xstart" name="xstart" type="number">
+                        </div>
+                    </div>
+                    <br>
+                    <div id="coords">
+                        <label for="xend">X-End</label>
+                        <div id="entries">
+                            <div id="slider2" class="slides"></div>
+                            <input id="xend" name="xend" type="number" >
+                        </div>
+                    </div>
+                    <br>
+                    <div id="coords" >
+                        <label for="ystart">Y-Start</label>
+                        <div id="entries">
+                            <div id="slider3" class="slides"></div>
+                            <input id="ystart" name="ystart" type="number" >
+                        </div>
+                    </div>
+                    <br>
+                    <div id="coords">
+                        <label for="yend">Y-End</label>
+                        <div id="entries">
+                            <div id="slider4" class="slides"></div>
+                            <input id="yend" name="yend" type="number" >
+                        </div>
+                    </div>
+                    <br>
+                    <input id="submit" class="submit" type="submit" value="Submit" >
+                </form>
+                <!-- displayes error messages or what the user entered -->
+                <div id="tablemessage">
+                </div>
+            </div>
+        </div>
+        <div id="close-buttons">
+            <button id='kill-all'>Close all tables</button>
+            <br>
+            <button id='kill-given'>Close tab</button>
+            <label>Index of Tab to be Removed:</label>
+            <input for="indexValue" id="indexValue">
+            <p>
+        </div>
+        <!-- Tabs -->
+        <div id="tabletabs">
+            <ul id="ttul">  
+            </ul>
+            <div id="tableArea">  
+            </div>
+        </div>
+        <!-- Area for table -->
+        <div class="footer">
+            <p id="val1">
+                <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img style="border:0;width:88px;height:31px"
+                    src="http://jigsaw.w3.org/css-validator/images/vcss"
+                    alt="Valid CSS!" />
+                </a>
+            </p>
+            <p id="val2">
+                <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img style="border:0;width:88px;height:31px"
+                    src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+                    alt="Valid CSS!" />
+                </a>
+            </p>
+        </div>
+        <!-- This block has functions to build and remove tabs -->
+        <script>
+            (function($){
+              $("#tabletabs").tabs();
+            })(jQuery);
+            <!-- Kills all tabs -->
+            $("button#kill-all").click(function() {
+                var num_tabs = $("div#tabletabs ul li").length - 1;
+                var tabIndex = parseInt($("#indexValue").val(), 10);
+                var tab = $( "#tabletabs" ).find(".ui-tabs-nav li:eq(" + num_tabs + ")").remove();
+                $("#tabletabs").tabs("refresh");
+                document.getElementById("ttul").innerHTML = "";
+                document.getElementById("tableArea").innerHTML = "";
+                document.getElementById("tablemessage").innerHTML = "You closed all tables";
+            }); 
+            <!-- kills tab at index given by input box -->
+            $("button#kill-given").click(function() {
+                var tabIndex = parseInt($("#indexValue").val(), 10) - 1;
+                var tab = $( "#tabletabs" ).find(".ui-tabs-nav li:eq(" + tabIndex + ")").remove();
+                var num_tabs = $("div#tabletabs ul li").length - 1;
+                if($("div#tabletabs ul li").length == 0)
+                {
+                    document.getElementById("ttul").innerHTML = "";
+                    document.getElementById("tableArea").innerHTML = "";
+                    document.getElementById("tablemessage").innerHTML = "You closed all tables";
+                }
+                $("#tabletabs").tabs("refresh");
+            });
+        </script>
+        <!-- This block has functions to build and manipulate sliders -->
+        <script>
+            (function($){
+                <!-- Create sliders -->
+              $("#slider1").slider({
+                      min: 1,
+                      max: 45,
+                      animate: true,
+                      change: function( event, ui ) {
+                          $( "#xstart" ).val( ui.value );
+                          $(ui.value).val($('#xstart').val());
+                              }
+                          });
+              $("#slider2").slider({
+                      min:1,
+                      max: 45,
+                      animate: true,
+                      change: function( event, ui ) {
+                          $( "#xend" ).val( ui.value );
+                          $(ui.value).val($('#xend').val());
+                              }
+                          });
+              $("#slider3").slider({
+                      min:1,
+                      max: 45,
+                      animate: true,
+                      change: function( event, ui ) {
+                          $( "#ystart" ).val( ui.value );
+                          $(ui.value).val($('#ystart').val());
+                              }
+                          });
+              $("#slider4").slider({
+                      min:1,
+                      max: 45,
+                      animate: true,
+                      change: function( event, ui ) {
+                          $( "#yend" ).val( ui.value );
+                          $(ui.value).val($('#yend').val());
+                              }
+                          });
+            })(jQuery);
+            
+            <!-- Bind input field events to update slider. -->
+            $("#xstart").bind('keyup mouseup', function () {
+              $("#slider1").slider("value" , $(this).val());});
+            $("#xend").bind('keyup mouseup', function () {
+              $("#slider2").slider("value" , $(this).val());});
+            $("#ystart").bind('keyup mouseup', function () {
+              $("#slider3").slider("value" , $(this).val());});
+            $("#yend").bind('keyup mouseup', function () {
+              $("#slider4").slider("value" , $(this).val());});
+        </script>
+    </body>
+</html>

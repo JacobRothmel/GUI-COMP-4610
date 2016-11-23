@@ -1,0 +1,119 @@
+/**
+* Jacob Rothmel
+* CSS style sheet for the js_table_size_submit form and the table it generates
+**/
+
+/********** clean spacing **********/
+html,
+body {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/** Ensure the page can't cause the input boxes to overloap. **/
+body {
+    min-width: 800px;
+    width: auto !important;
+    width: 500px;
+}
+
+/********** Page Header Style **********/
+#header {
+    width: 100%;
+    display: block;
+    margin-bottom: 1%;
+}
+.jumbotron {
+    width: 100%;
+    min-width: 445px;
+}
+.title {
+    text-align: center;
+    margin: 0 auto;
+}
+
+/********** Form Area Style **********/
+.container {    
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 1%;
+}
+form {
+    display: block;
+    margin-bottom: 1%;
+    height: inherit;
+}
+#tinfo-values {
+    display: block;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+}
+.coords {   
+    display: inline;
+    margin-bottom: 
+}
+.cords label {
+    position: relative;
+    margin-right: 10%;    
+}
+.coords input {
+    width: 70%;
+}
+.entries {
+    position: relative;
+    width: 50%;
+    display: inline-block; 
+}
+
+button {
+    margin: 1%;
+}
+.ui-slider{width: 70%;
+margin: 0 auto;}
+
+/********** Table Styles **********/
+#tablearea {
+    width: 100%;
+}
+table {
+    text-align: center;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+
+/********** Tab Styles **********/
+#tabletabs {
+    margin-top: 1%;
+    width: 100%;
+}
+/** Make the table pretty **/
+tr:nth-child(odd),
+td:nth-child(odd) {
+    background-color: palegreen;
+}
+th:first-child {
+    background-color: white;
+}
+
+/********** Footer **********/
+/** Display validators on same line **/
+p {
+    display: inline;
+}
+
+/********** Error message **********/
+label.error{
+    color: red !important;
+    font-weight: bold !important;
+}

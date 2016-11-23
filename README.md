@@ -3,6 +3,7 @@ includes:
 hw5
 hw6
 hw7
+hw8
 inclass2
 inclass5
 inclass6
