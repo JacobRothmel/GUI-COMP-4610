@@ -106,12 +106,6 @@ th:first-child {
     background-color: white;
 }
 
-/********** Footer **********/
-/** Display validators on same line **/
-p {
-    display: inline;
-}
-
 /********** Error message **********/
 label.error{
     color: red !important;
