@@ -1,0 +1,61 @@
+/**
+* Jacob Rothmel
+* CSS style sheet for the scrabble game.
+**/
+body {
+    background-color: green;
+}
+/*
+ name styling
+*/
+#name{
+    display: block;
+    font-size: 500%;
+    text-align: center;
+    color: black;
+    width: auto;
+    height: auto;
+    float: inherit;
+}
+
+/*
+ centering of board
+*/
+#board{
+    text-align: center;
+}
+
+img.resize{
+    width:540px;
+    height: auto;
+}
+
+/*
+ centering of rack
+*/
+#rack{
+    margin: auto;
+    width: 28%;
+}
+
+/*
+ centering of result class
+*/
+.results{
+    text-align: center;
+}
+
+/*
+ centering of total score
+*/
+#total_score{
+    text-align: center;
+}
+
+/*main blocks formatting*/
+#main{
+    width: auto;
+    display: block;
+    float: inherit;
+    height: auto;
+}
