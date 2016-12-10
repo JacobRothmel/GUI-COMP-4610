@@ -8,6 +8,9 @@ body {
 /*
  name styling
 */
+page {
+    background-color: green;
+}
 #name{
     display: block;
     font-size: 500%;
